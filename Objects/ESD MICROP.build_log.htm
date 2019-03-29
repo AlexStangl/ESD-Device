@@ -22,16 +22,42 @@ Dialog DLL:      TARMP1.DLL V1.26.0.0
  
 <h2>Project:</h2>
 F:\Research\ESD\ESD MICROP.uvproj
-Project File Date:  03/27/2019
+Project File Date:  03/29/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling main.c...
-linking...
-Program Size: Code=576 RO-data=224 RW-data=12 ZI-data=612  
-".\Objects\ESD MICROP.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:01
+timer_init.h(1): warning:  #1295-D: Deprecated declaration init_timer0_16bit - give arg types
+  void init_timer0_16bit();
+timer_init.h(2): warning:  #1295-D: Deprecated declaration start_timer0_16bit - give arg types
+  void start_timer0_16bit();
+timer_init.h(3): warning:  #1295-D: Deprecated declaration init_timer1_16bit - give arg types
+  void init_timer1_16bit();
+timer_init.h(4): warning:  #1-D: last line of file ends without a newline
+  void start_timer1_16bit();
+timer_init.h(4): warning:  #1295-D: Deprecated declaration start_timer1_16bit - give arg types
+  void start_timer1_16bit();
+main.c(4): error:  #5: cannot open source input file "GPIO_Initializations.h": No such file or directory
+  #include "GPIO_Initializations.h"
+main.c: 5 warnings, 1 error
+compiling timer_init.c...
+timer_init.h(1): warning:  #1295-D: Deprecated declaration init_timer0_16bit - give arg types
+  void init_timer0_16bit();
+timer_init.h(2): warning:  #1295-D: Deprecated declaration start_timer0_16bit - give arg types
+  void start_timer0_16bit();
+timer_init.h(3): warning:  #1295-D: Deprecated declaration init_timer1_16bit - give arg types
+  void init_timer1_16bit();
+timer_init.h(4): warning:  #1-D: last line of file ends without a newline
+  void start_timer1_16bit();
+timer_init.h(4): warning:  #1295-D: Deprecated declaration start_timer1_16bit - give arg types
+  void start_timer1_16bit();
+timer_init.c(76): warning:  #1-D: last line of file ends without a newline
+  }
+timer_init.c: 6 warnings, 0 errors
+".\Objects\ESD MICROP.axf" - 1 Error(s), 11 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
