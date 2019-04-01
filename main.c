@@ -23,7 +23,9 @@ void TIMER32_0_IRQHandler()
 
 void PIOINT0_IRQHandler()
 {
-	//Alex is a leader
+	for (int i = 0; i < 1000; i++);
+	LPC_GPIO0->IC = (1 << 5);
+	
 	LPC_GPIO0->DATA |= (1 << 9);
 	start_timer0_16bit();
 	
