@@ -74,3 +74,28 @@ void start_timer1_16bit()
 	LPC_TMR16B1->TCR = 0x2;
 	LPC_TMR16B1->TCR = 0x1;
 }
+
+void init_timer2_32bit()
+{
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1 << 9);
+	LPC_TMR32B0->CTCR = 0;
+	
+	LPC_TMR32B0->PR = 47;
+	LPC_TMR32B0->PC = 47;
+	
+	LPC_TMR32B0->MR3 = 1000;
+	LPC_TMR32B0->MCR |= (0x5 << 9);
+	
+	
+		// Enable the interrupt in the NVIC and set its priority to the lowest priority
+	NVIC_EnableIRQ(TIMER_32_0_IRQn);
+	NVIC_SetPriority(TIMER_32_0_IRQn, 3);
+	
+	// Reset counter and keep stopped
+	LPC_TMR32B0->TCR = 0x2;
+}
+void start_timer2_32bit()
+{
+	LPC_TMR32B0->TCR = 0x2;
+	LPC_TMR32B0->TCR = 0x1;
+}
