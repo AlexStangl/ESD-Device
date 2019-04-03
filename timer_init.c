@@ -15,7 +15,7 @@ void init_timer0_16bit()
 	LPC_TMR16B0->PC = 47;
 	
 	// MR3 will be used for the interrupt with 1ms pulses
-	LPC_TMR16B0->MR3 = 1000;
+	LPC_TMR16B0->MR3 = 10000;
 	
 	// Interrupt and stop after 1ms
 	LPC_TMR16B0->MCR |= (0x5 << 9);
@@ -83,7 +83,7 @@ void init_timer2_32bit()
 	LPC_TMR32B0->PR = 47;
 	LPC_TMR32B0->PC = 47;
 	
-	LPC_TMR32B0->MR3 = 1000;
+	LPC_TMR32B0->MR3 = 10000;
 	LPC_TMR32B0->MCR |= (0x5 << 9);
 	
 	
