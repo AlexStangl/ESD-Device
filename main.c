@@ -9,22 +9,22 @@ void TIMER16_0_IRQHandler()
 	
 	 //turn on the pulse 
 	LPC_GPIO0->DATA &= ~(1 << 9);
-	start_timer1_16bit();
+	start_timer2_32bit();
 }
 
 void TIMER16_1_IRQHandler()
 {
 	LPC_TMR16B1->IR |= (1 << 3);
 	
-	start_timer2_32bit();
-	LPC_GPIO0->DATA |= (1 << 8);
+	LPC_GPIO0->DATA &= ~(1 << 8);
 }
 
 void TIMER32_0_IRQHandler()
 {
 	LPC_TMR32B0->IR |= (1 << 3);
 	
-	LPC_GPIO0->DATA &= ~(1 << 8);
+	LPC_GPIO0->DATA |= (1 << 8);
+	start_timer1_16bit();
 }
 
 void PIOINT0_IRQHandler()
